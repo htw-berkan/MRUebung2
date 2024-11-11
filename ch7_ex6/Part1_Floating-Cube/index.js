@@ -1,4 +1,9 @@
 import * as THREE from  'three';
+import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
+
+
+const result = await new GLTFLoader().loadAsync('jemek1.glb')
+
 // global scene values
 var btn, gl, glCanvas, camera, scene, renderer, cube;
 
@@ -12,6 +17,7 @@ function loadScene() {
     // setup WebGL
     glCanvas = document.createElement('canvas');
     gl = glCanvas.getContext('webgl', { antialias: true });
+
 
     // setup Three.js scene
     camera = new THREE.PerspectiveCamera(
@@ -32,7 +38,8 @@ function loadScene() {
 
     cube = new THREE.Mesh( geometry, material );
     cube.position.y = 0.2;
-    scene.add( cube );
+    //scene.add( cube );
+    scene.add(result);
 
     // setup Three.js WebGL renderer
     renderer = new THREE.WebGLRenderer({
