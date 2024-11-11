@@ -1,5 +1,5 @@
 import * as THREE from  'three';
-import {GLTFLoader} from 'three/addons/loaders/GLTFLoader';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 
 const result = await new GLTFLoader().loadAsync('jemek1.glb')
